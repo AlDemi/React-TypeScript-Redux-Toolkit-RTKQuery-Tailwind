@@ -21,7 +21,7 @@ export default function RepoCard({ repo }: { repo: IRepo; }) {
   };
 
   return (
-    <div className="border flex items-center justify-between rounded p-3 mt-2 cursor-pointer hover:bg-gray-100 hover:shadow-md from-neutral-200 transition-all">
+    <div className="border flex-auto items-center justify-between rounded p-3 mt-2 cursor-pointer hover:bg-gray-100 hover:shadow-md from-neutral-200 transition-all">
       <div>
         <a href={repo.html_url} target="_blank" rel="noopener noreferrer">
           <h3 className="text-lg font-semibold">{repo.full_name}</h3>
@@ -32,7 +32,7 @@ export default function RepoCard({ repo }: { repo: IRepo; }) {
           {repo.description && <p className="font-thin mt-2 mr-2 max-w-60">{repo?.description}</p>}
         </a>
       </div>
-      <div>
+      <div className="mt-4">
         {!isFavorite && <button
           className="py-2 px-5 bg-green-600 text-white shadow-md hover:bg-green-700 active:shadow-sm rounded"
           onClick={addToFavorites}
